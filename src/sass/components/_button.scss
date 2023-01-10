@@ -1,0 +1,47 @@
+.btn {
+  display: flex;
+  align-items: center;
+  background-color: #ececec;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+
+  &--change-bg {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #aeaeae;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #c1c1c1;
+      color: white;
+    }
+  }
+
+  &--add-new-card {
+    & svg {
+      color: #aeaeae;
+      margin-right: 0.2rem;
+    }
+
+    & span {
+      font-weight: 600;
+      color: #aeaeae;
+      letter-spacing: 1px;
+    }
+  }
+
+  &--clear {
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: transparent;
+    color: #aeaeae;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #aeaeae;
+    cursor: pointer;
+  }
+}

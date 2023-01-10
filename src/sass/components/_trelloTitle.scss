@@ -1,0 +1,28 @@
+.editable-title-container {
+  display: flex;
+  margin: 1rem;
+}
+.editable-title {
+  font-size: 2rem;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.title-input {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: rgb(167, 167, 167);
+  margin: 1rem;
+  padding-left: 0.5rem;
+  border: none;
+  outline: none;
+
+  &:focus {
+    background: rgb(241, 241, 241);
+  }
+}
+.more-horiz-icon {
+  font-size: 1.6rem;
+  cursor: pointer;
+}

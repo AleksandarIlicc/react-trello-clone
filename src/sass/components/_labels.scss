@@ -1,0 +1,55 @@
+.project {
+  background-color: #55f055;
+}
+.client-request {
+  background-color: #f0ac55;
+}
+.urgent {
+  background-color: #f05a55;
+}
+.satisfaction {
+  background-color: #286ef9;
+}
+
+.labels {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  &__labels {
+    display: inline-block;
+    width: 3rem;
+    height: auto;
+    max-height: 0.7rem;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    & span {
+      opacity: 0;
+    }
+
+    &--show {
+      width: auto;
+      max-height: 2rem;
+      padding: 0.3rem 1rem;
+      color: #fff;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+
+      & span {
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  &__labels-icon {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,480 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #6a6a6a;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  font-size: 1.3rem;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 89vh;
+  padding: 2rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.input-container {
+  width: 20rem;
+}
+
+.background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.background--show {
+  display: block;
+}
+
+.input-card {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  background-color: #ececec;
+  z-index: 100;
+}
+@media only screen and (max-width: 30em) {
+  .input-card {
+    width: 90vw !important;
+    height: 95vh !important;
+    overflow: auto;
+  }
+}
+.input-card--show {
+  display: block;
+}
+
+.modal-container {
+  display: flex;
+  gap: 3rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .modal-container {
+    flex-direction: column;
+  }
+}
+.modal-container__right {
+  flex-basis: 100%;
+}
+.modal-container__right--card {
+  flex-basis: 75%;
+}
+.modal-container__left {
+  flex-basis: 25%;
+}
+
+.form textarea {
+  padding: 0.5rem 0 5rem 0.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.form input {
+  width: 30rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0 2rem 0.5rem;
+  border: none;
+  outline: none;
+}
+@media only screen and (max-width: 30em) {
+  .form input {
+    width: 100%;
+  }
+}
+
+.card-list {
+  margin-top: 1rem;
+}
+.card-list li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.card-list li span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card-list > li {
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #d9d9d9;
+  border-radius: 0.3rem;
+}
+
+.card-sub-list {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 30rem;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.card-sub-list div {
+  padding: 1rem;
+  text-align: center;
+}
+.card-sub-list ul li {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  padding: 1rem;
+  letter-spacing: 1px;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-sub-list ul li:hover {
+  transform: translateX(0.5rem);
+}
+.card-sub-list--show {
+  display: block;
+}
+
+.btn-confirm {
+  padding: 1rem 1.3rem;
+  background-color: #38e838;
+  color: #fff;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.btn-confirm:hover {
+  background-color: #5aac44;
+}
+
+.empty-str-message {
+  font-size: 1.3rem;
+  color: #e64949;
+  margin-top: 0.7rem;
+}
+
+.confirm {
+  display: flex;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.confirm svg {
+  position: relative;
+  font-size: 2rem;
+  color: #8a8a8a;
+  margin-left: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.confirm svg:hover {
+  color: #6f6f6f;
+}
+.confirm--show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.title-card {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.times-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.4rem;
+  color: #6a6a6a;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  background-color: #ececec;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.btn--change-bg {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #aeaeae;
+  transition: all 0.3s ease;
+}
+.btn--change-bg:hover {
+  background-color: #c1c1c1;
+  color: white;
+}
+.btn--add-new-card svg {
+  color: #aeaeae;
+  margin-right: 0.2rem;
+}
+.btn--add-new-card span {
+  font-weight: 600;
+  color: #aeaeae;
+  letter-spacing: 1px;
+}
+.btn--clear {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: transparent;
+  color: #aeaeae;
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  border-bottom: 2px solid #aeaeae;
+  cursor: pointer;
+}
+
+.project {
+  background-color: #55f055;
+}
+
+.client-request {
+  background-color: #f0ac55;
+}
+
+.urgent {
+  background-color: #f05a55;
+}
+
+.satisfaction {
+  background-color: #286ef9;
+}
+
+.labels__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.labels__labels {
+  display: inline-block;
+  width: 3rem;
+  height: auto;
+  max-height: 0.7rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.labels__labels span {
+  opacity: 0;
+}
+.labels__labels--show {
+  width: auto;
+  max-height: 2rem;
+  padding: 0.3rem 1rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.labels__labels--show span {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.labels__labels-icon {
+  display: none;
+}
+.labels__labels-icon--active {
+  display: block;
+}
+
+.nav {
+  width: 100%;
+  height: 11vh;
+  background: transparent;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav > h1 {
+  font-size: 2rem;
+  color: white;
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  right: -50rem;
+  width: 35rem;
+  height: 100vh;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 3px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+@media only screen and (max-width: 30em) {
+  .side-bar {
+    width: 100%;
+  }
+}
+.side-bar--active {
+  right: 0;
+}
+.side-bar svg {
+  font-size: 1.8rem;
+  color: #6a6a6a;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.bg-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem;
+  margin-top: 2rem;
+}
+
+.bg {
+  max-width: 100%;
+  height: 10rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.bg--1 {
+  background-image: url("https://imgc.allpostersimages.com/img/posters/tom-norring-early-sunrise-yosemite-california-usa_u-L-PHBDU30.jpg");
+}
+.bg--2 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQypAifSApAJ3Gcz0tBl6gvO_Vaj-_DdqZWrGFSF9wrQ7gwaholEovvegBQcNezNu98soQ&usqp=CAU");
+}
+
+.bg-handlerShow {
+  transform: translateY(-130%);
+  opacity: 0;
+  transition: transform 0.3s ease 0.2s, opacity 0.3s ease;
+}
+.bg-handlerShow--active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.3s ease 0.2s;
+}
+
+.card {
+  padding: 1rem;
+  margin-bottom: 0.7rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+}
+.card__body svg {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+.card__title {
+  font-family: "Nunito", cursive;
+  font-size: 1.6rem;
+}
+.card__icon {
+  font-size: 1.2rem;
+  color: #aeaeae;
+  cursor: pointer;
+}
+
+.list-root {
+  width: 25rem;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: #ececec;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+@media only screen and (max-width: 30em) {
+  .list-root {
+    width: 100%;
+  }
+}
+
+.editable-title-container {
+  display: flex;
+  margin: 1rem;
+}
+
+.editable-title {
+  font-size: 2rem;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.title-input {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: rgb(167, 167, 167);
+  margin: 1rem;
+  padding-left: 0.5rem;
+  border: none;
+  outline: none;
+}
+.title-input:focus {
+  background: rgb(241, 241, 241);
+}
+
+.more-horiz-icon {
+  font-size: 1.6rem;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

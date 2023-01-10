@@ -1,0 +1,11 @@
+.list-root {
+  width: 25rem;
+  height: min-content;
+  background-color: #ececec;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  @media only screen and (max-width: 30em) {
+    width: 100%;
+  }
+}
